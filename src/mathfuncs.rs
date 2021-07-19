@@ -120,7 +120,7 @@ use primes::factors_uniq;
 pub fn find_generator(prime: &u64)->u64{
     let nm1= *prime -1;
     
-    // Find the unique prime factors of nm1. The used library receives u128 inputs
+    // Find the unique prime factors of nm1. The used library receives u64 inputs
     // and outputs a u64 number. So, we need to convert the output to u64 later. Since prime is a u64
     // number, its factors are less than 64 bits. 
     let prime_factors = factors_uniq(nm1);
