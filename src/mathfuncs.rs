@@ -79,13 +79,13 @@ pub fn find_prime_with_factors(factor1: &u64,factor2: &u64)->u64
 {
     // multiply factor1 and factor2 for a potential acceptable (p-1)=factor1*factor2
     // store the result in a temporary variable
-	let tmp=factor1*factor2;
+	let tmp = factor1*factor2;
     
     // the potential prime
-	let mut p=tmp+1;
+	let mut p = tmp+1;
 
     // A variable (vector) to store the actual output prime(s)
-	let mut primes: Vec<u64>=vec![];// In case that we may want more than 1 
+	let mut primes: Vec<u64> = vec![];// In case that we may want more than 1 
                                     // prime number. In that case, we need to 
                                     // make changes to the rest of the code
 
@@ -117,7 +117,7 @@ pub fn find_prime_with_factors(factor1: &u64,factor2: &u64)->u64
 //use factor::factor::factor;
 use primes::factors_uniq;
 pub fn find_generator(prime: &u64)->u64{
-    let nm1= *prime -1;
+    let nm1 = *prime -1;
     
     // Find the unique prime factors of nm1. The used library receives a u64 input
     // and outputs a u64 number. Since prime is a u64 number, its factors are less 
@@ -125,17 +125,17 @@ pub fn find_generator(prime: &u64)->u64{
     let prime_factors = factors_uniq(nm1);
 
     // How many prime factors exists in nm1
-	let length =prime_factors.len();
+	let length = prime_factors.len();
 	
     // We go through all numbers starting from 2 until we find a generator. 
     // Since a random number can be a generator with high probability, this
     // approach should give the output after trying a few numbers
-    let mut result =1;
+    let mut result = 1;
     loop{
         result = result + 1;
 
         // If the current result is not a generator, this flag will become false
-        let mut is_gen=true;
+        let mut is_gen= true;
 
 		for i in 0..length
 		{
@@ -146,7 +146,7 @@ pub fn find_generator(prime: &u64)->u64{
             //println!("{:?} div {:?} = {:?}",nm1,denum,prime);
 			if  field_pow(&result,&div, prime) == 1
 			{
-				is_gen=false;
+				is_gen = false;
 				break;
 			}
 
