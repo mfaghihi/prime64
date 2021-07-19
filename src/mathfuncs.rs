@@ -106,7 +106,7 @@ pub fn find_prime_with_factors(factor1: &u64,factor2: &u64)->u64
                 break; // If we want more than 1 prime, we should remove this break.
             }
         // if p is not prime, add a new factor to it
-        // By doing so, the value of p-1 will still have factor1 and factor1 as its factors
+        // By doing so, the value of p-1 will still have factor1 and factor2 as its factors
         p = tmp * i + 1;
 
 		}
